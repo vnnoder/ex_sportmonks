@@ -1,11 +1,10 @@
 # ExSportmonks
 
-**TODO: Add description**
+**Elixir Client for Soccer Sportmonks API 2.0 at https://www.sportmonks.com/products/soccer/docs/2.0**
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ex_sportmonks` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `ex_sportmonks` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -15,7 +14,28 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/ex_sportmonks](https://hexdocs.pm/ex_sportmonks).
+## API Key
+
+Register for an API key and add it to the environment variable
+```
+export SPORT_MONK_TOKEN="your api key here"
+```
+
+## Usage
+
+All endpoints in https://www.sportmonks.com/products/soccer/docs/2.0 are supported.
+
+### Get leagues from sportmonks:
+
+```elixir
+ExSportmonks.leagues()
+```
+
+### Get first 100 leagues with country from sportmonks:
+
+```elixir
+ExSportmonks.leagues(%{include: "country", page: 1})
+```
+
+For more information, please check [the API](https://github.com/vnnoder/ex_sportmonks/blob/master/lib/ex_sportmonks.ex)
 
